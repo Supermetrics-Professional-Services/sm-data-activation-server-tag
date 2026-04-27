@@ -1,0 +1,6 @@
+homepage: "https://www.supermetrics.com"
+documentation: "https://github.com/Supermetrics-Professional-Services/sm-data-activation-server-tag#readme"
+versions:
+  # Latest version
+  - sha: b04fcecf853c28703e82c66250d32622e5f8d99f
+    changeNotes: "Initial release"
