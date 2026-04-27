@@ -229,7 +229,7 @@ ___TEMPLATE_PARAMETERS___
       {
         "type": "LABEL",
         "name": "lbl_trackId",
-        "displayName": "Use a Server-Set UUID cookie as your tracking id. If you don\u0027t have a UUID already, create a new Data Activation Web Tag and choose Tag Type: Generate _sm_da_uuid cookie.\u003c/br\u003eThe new tag will need to be fired as early as possible on every Page View.",
+        "displayName": "Use a Server-Set UUID cookie as your tracking id. If you don\u0027t have a UUID already, create a new Data Activation Web Tag and choose Tag Type: Generate _svtri cookie.\u003c/br\u003eThe new tag will need to be fired as early as possible on every Page View.",
         "enablingConditions": [
           {
             "paramName": "trackId",
@@ -535,7 +535,7 @@ const dataSource  = data.dataSource;
 if (dataSource === 'server_cookie') {
   const uuid          = getEventData('x_smda_uuid');
   const setCookieFlag = getEventData('x_smda_set_cookie');
-  const cookieName    = getEventData('x_smda_cookie_name') || '_sm_da_uuid';
+  const cookieName    = getEventData('x_smda_cookie_name') || '_svtri';
 
   if (!uuid || setCookieFlag === 'false') {
     logToConsole('[SMDA Server Tag] No UUID to set, or set_cookie flag is false.');

@@ -22,7 +22,7 @@ This template handles four completely distinct execution paths. You select the m
 
 ### Mode 1: Create Server-Set Cookie
 
-**What it does:** Writes a secure, HTTP-only, first-party `_sm_da_uuid` cookie directly to the user's browser through your server domain. This is the primary defence against browser tracking restrictions like Safari's Intelligent Tracking Prevention (ITP), which deletes JavaScript-set cookies after just 7 days. A server-set cookie issued from your own domain can persist for up to 400 days.
+**What it does:** Writes a secure, HTTP-only, first-party `_svtri` cookie directly to the user's browser through your server domain. This is the primary defence against browser tracking restrictions like Safari's Intelligent Tracking Prevention (ITP), which deletes JavaScript-set cookies after just 7 days. A server-set cookie issued from your own domain can persist for up to 400 days.
 
 **When to use:** Create exactly **one** dedicated tag using this mode in your server container.
 
@@ -75,7 +75,7 @@ This template handles four completely distinct execution paths. You select the m
 | Data Activation Username | Your username (email address). | `user@example.com` |
 | Data Activation Password | Your password. | `XxxxxxXxxXXxxxxXxxxXxxxxx` |
 | Data Activation Site ID | Your unique CDP site identifier. | `1234` |
-| User Tracking Identifier - UUID | The user's UUID. Read it from the server-set cookie using a GTM 1st Party Cookie variable. | `{{cookie - _sm_da_uuid}}` |
+| User Tracking Identifier - UUID | The user's UUID. Read it from the server-set cookie using a GTM 1st Party Cookie variable. | `{{cookie - _svtri}}` |
 
 **Sub-type selection:** Within this mode, a second dropdown lets you choose the event type:
 
@@ -126,7 +126,7 @@ Associates an additional identifier (e.g., a hashed email) with the user's anony
 | Data Activation Username | Your username (email address). | `user@example.com` |
 | Data Activation Password | Your password. | `XxxxxxXxxXXxxxxXxxxXxxxxx` |
 | Data Activation Site ID | Your unique CDP site identifier. | `1234` |
-| User Tracking Identifier - UUID | The user's UUID. Read it from the server-set cookie using a GTM 1st Party Cookie variable. | `{{cookie - _sm_da_uuid}}` |
+| User Tracking Identifier - UUID | The user's UUID. Read it from the server-set cookie using a GTM 1st Party Cookie variable. | `{{cookie - _svtri}}` |
 
 **`purchase` event mapping:**
 
@@ -168,7 +168,7 @@ For a full server-side Data Activation deployment, you should have **two tags** 
 
 This template uses standard GTM Sandboxed Server-Side JavaScript APIs only:
 
-- `setCookie` is used exclusively to write the `_sm_da_uuid` first-party identifier.
+- `setCookie` is used exclusively to write the `_svtri` first-party identifier.
 - `sendHttpRequest` is strictly scoped to the `api.relay42.com` domain.
 - Credentials are transmitted using standard HTTP Basic authentication over HTTPS.
 - Logging is enabled in debug mode only, ensuring credentials are not exposed in production logs.
