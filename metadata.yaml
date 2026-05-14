@@ -2,5 +2,8 @@ homepage: "https://www.supermetrics.com"
 documentation: "https://github.com/Supermetrics-Professional-Services/sm-data-activation-server-tag#readme"
 versions:
   # Latest version
+  - sha:
+    changeNotes: "v1.5 | Replaced REST API with URL-based tracking, removed authentication requirement, extended e-commerce summary to view_cart and begin_checkout events."
+  # Older versions
   - sha: b04fcecf853c28703e82c66250d32622e5f8d99f
     changeNotes: "Initial release"
